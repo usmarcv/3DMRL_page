@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="3D-MRL creates nested multimodal 3D representations via matryoshka representation learning.">
+  <meta name="keywords" content=" 3D-MRL">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D-MRL: Nested Multimodal 3D Representations</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <!-- Title -->
+          <h1 class="title is-1 publication-title">3D-MRL: Nested Multimodal 3D Representations via Matryoshka Representation Learning</h1>
+
+
+          <!-- Author photos -->
+          <div class="author-photos">
+
+            <a href="#">
+              <img
+                src="./static/images/authors/marcus_author.jpg"
+                alt="Márcus Lobo"
+                class="author-photo">
+            </a>
+
+            <a href="#">
+              <img
+                src="./static/images/authors/vitor_author.jpeg"
+                alt="Vitor Matias"
+                class="author-photo">
+            </a>
+
+             <a href="#">
+              <img
+                src="./static/images/authors/jeova_author.png"
+                alt="Jeová Farias"
+                class="author-photo">
+            </a>
+
+            <a href="#moacir">
+              <img
+                src="./static/images/authors/moacir_author.jpg"
+                alt="Moacir Ponti"
+                class="author-photo">
+            </a>
+          </div>
+          <!-- end author photos -->
+          
+          <!-- Name authors and affiliations -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Márcus Lobo</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Vitor Matias</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://jeovafarias.github.io/">Jeová Farias</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/moacirponti/">Moacir Ponti</a><sup>1</sup>,
+            </span>
+          </div>
+          
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of São Paulo,</span>
+            <span class="author-block"><sup>2</sup>Bowdoin College</span>
+            <!-- <span class="author-block"><sup>3</sup>Mercado Libre</span> -->
+          </div>
+          <!-- end authors and affiliations -->
+
+          <!-- CONFERENCE -->
+          <div class="publication-venue">
+
+            The British Machine Vision Conference (BMVC) 2026
+          
+          </div>
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a> -->
+              <!-- </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/usmarcv/3DMRL"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+              <span class="link-block">
+                <a href="https://huggingface.co/marcusvlc/3D-MRL/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="🤗"></i> -->
+                       🤗
+                  </span>
+                  <span>Models</span>
+                  </a>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vision-Language Models align point clouds with image and text embeddings, enabling zero-shot recognition, 
+            retrieval, and open-vocabulary understanding of 3D shapes. Existing multimodal 3D pre-training methods 
+            produce fixed-dimensional embeddings, requiring separate models for different computational budgets.
+          </p>
+          <p>
+            We propose <b>3D Matryoshka Representation Learning (3D-MRL)</b>, <i>a multimodal 3D pre-training 
+            framework based on Matryoshka Representation Learning</i>. 3D-MRL learns nested 3D representations 
+            by aligning point clouds with frozen CLIP image and text embeddings while applying contrastive 
+            supervision across multiple embedding dimensions. The Matryoshka objective is applied only to the 
+            3D encoder, allowing a single model to produce representations at different dimensionalities without retraining.
+          </p>
+          <p>
+            Experiments on the Objaverse-LVIS, ModelNet40, and ScanNet datasets show that 3D-MRL achieves 
+            competitive performance on zero-shot and few-shot 3D recognition tasks. In addition, the learned 
+            representations support retrieval across different embedding dimensions within a single model. 
+            On Objaverse-LVIS, 3D-MRL improves Top-1 accuracy from 46.8% to 50.9%. Retrieval experiments 
+            further show that different embedding dimensions yield varying levels of semantic and geometric specificity.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+
+  
+
+  </div>
+</section> -->
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+
+        <div class="method-figure">
+          <img
+            src="./static/images/3dmrl_flow.png"
+            alt="Overview of the 3D-MRL framework">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+          Our <b>3D-MRL</b> learns nested 3D representations by aligning point clouds with 
+          frozen CLIP image and text embeddings across multiple dimensionalities. 
+          Contrastive supervision is applied to each nested prefix, enabling a single 3D 
+          encoder to produce representations from compact to full dimensionality without retraining. 
+          At inference, embeddings can be truncated according to the available computational budget, 
+          supporting efficient zero-shot recognition and cross-modal retrieval.
+
+          </p>
+      </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Zero-shot Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Zero-shot 3D Shape Classification</h2>
+
+        <div class="method-figure-zsl">
+          <img
+            src="./static/images/zsl_table.jpg"
+            alt="Zero-shot 3D shape classification results.">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>3D-MRL</b> enables zero-shot 3D recognition by directly comparing nested 
+            point-cloud embeddings with frozen CLIP category embeddings, without 
+            task-specific fine-tuning. Across Objaverse-LVIS, ModelNet40, and ScanObjectNN, 
+            the model achieves competitive performance, with particularly strong 
+            gains on the long-tailed Objaverse-LVIS benchmark, reaching 50.9% Top-1 accuracy 
+            while preserving the ability to operate at multiple embedding dimensions.
+          </p>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Qualitative Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Point cloud-input 3D shape retrieval</h2>
+
+        <div class="method-figure-3dto3d">
+          <img
+            src="./static/images/3DTO3D_retrieval.jpg"
+            alt="Qualitative results of 3D-to-3D retrieval on Objaverse-LVIS dataset.">
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Qualitative Results 2-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Text-input 3D shape retrieval</h2>
+
+        <div class="method-figure-textto3d">
+          <img
+            src="./static/images/TEXTO3D_retrieval.jpg"
+            alt="Qualitative results of text-to-3D retrieval on Objaverse-LVIS dataset.">
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{lobo2026_3dmrl,
+        author    = {Lobo, Márcus and Matias, Vitor and Farias, Jeová and Ponti, Moacir},
+        title     = {3D-MRL: Nested Multimodal 3D Representations via Matryoshka Representation Learning},
+        journal   = {BMVC},
+        year      = {2026},
+        }
+      </code></pre>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Acknowledgments -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Acknowledgments</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            This work was supported in part by the São Paulo Research Foundation (FAPESP - grants 2024/09462-1 and 2026/01721-3).
+          </p>
+      </div>
+    </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content">
+          <p>
+             This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"> Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+     
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
