@@ -101,7 +101,7 @@
           
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of São Paulo,</span>
+            <span class="author-block"><sup>1</sup>Universidade de São Paulo,</span>
             <span class="author-block"><sup>2</sup>Bowdoin College</span>
             <!-- <span class="author-block"><sup>3</sup>Mercado Libre</span> -->
           </div>
@@ -117,14 +117,14 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+              <span class="link-block">
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
-                </a> -->
+                </a>
               <!-- </span>
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
@@ -329,7 +329,7 @@
 
         <div class="method-figure">
           <img
-            src="./static/images/3dmrl_flow.png"
+            src="./static/images/3dmrl_flow.jpg"
             alt="Overview of the 3D-MRL framework">
         </div>
 
@@ -408,6 +408,57 @@
 </section>
 
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Qualitative Results 2-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More Qualitative Examples</h2>
+
+        <div class="content has-text-justified">  
+          <p> 
+          <b>3D-MRL</b> with the <i>Matryoshka cascade search strategy</i>, 
+          exploiting the nested structure of the learned embeddings for efficient retrieval.
+
+          </p>
+        </div>
+        <div class="method-figure-mrlcascade">
+          <img
+            src="./static/images/mrl_cascade_retrieval.jpg"
+            alt="Qualitative results of 3D-MRL cascade retrieval.">
+        </div>
+
+
+        <div class="content has-text-justified">  
+          <p>
+          <b>Text-to-3D retrieval</b> results on the Objaverse-LVIS dataset, showing the top-3 retrieved shapes for each text query.
+          </p>
+        </div>
+        <div class="method-figure-textto3d">
+          <img
+            src="./static/images/TEXTO3D_retrieval_supp.jpg"
+            alt="Qualitative results of text-to-3D retrieval on Objaverse-LVIS dataset.">
+        </div>
+
+        <p></p>
+        <div class="content has-text-justified">  
+          <p>
+          <b>Image-to-3D retrieval</b> results on the Objaverse-LVIS dataset, showing the top-2 retrieved shapes for each image query.
+  
+          </p>
+        </div>
+         <div class="method-figure-imageto3d">
+          <img
+            src="./static/images/IMAGETO3D_retrieval_supp.jpg"
+            alt="Qualitative results of Image-to-3D retrieval on Objaverse-LVIS dataset.">
+        </div>
+
+      </div>
+    </div>
+</section>
+
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -433,7 +484,11 @@
 
         <div class="content has-text-justified">
           <p>
-            This work was supported in part by the São Paulo Research Foundation (FAPESP - grants 2024/09462-1 and 2026/01721-3).
+            This work was supported in part by the São Paulo Research Foundation (FAPESP), 
+            under grants #2024/09462-1 and #2026/01721-3, and by the Conselho Nacional de 
+            Desenvolvimento Científico e Tecnológico (CNPq) under fellowship grant #315158/2023-9. 
+            The authors gratefully acknowledge the Center for Mathematical Sciences Applied 
+            to Industry (CeMEAI) for providing computational resources, funded by FAPESP under grant #2013/07375-0.
           </p>
       </div>
     </div>
